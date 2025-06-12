@@ -24,16 +24,16 @@
     <field name="model">website.person</field>
     <field name="arch" type="xml">
       <tree>
-        <field name="first_name"/>
-        <field name="last_name"/>
-        <field name="full_name"/>
-        <field name="birthday"/>
-        <field name="age"/>
-        <field name="sex"/>
-        <field name="company_id"/>
+        <field name="first_name" optional="show"/>
+        <field name="last_name" optional="show"/>
+        <field name="full_name" optional="show"/>
+        <field name="birthday" optional="show"/>
+        <field name="age" optional="show"/>
+        <field name="sex" optional="show"/>
+        <field name="company_id" optional="hide"/>
       </tree>
     </field>
-  </record>
+</record>
 
   <record id="action_person_list" model="ir.actions.act_window">
     <field name="name">Persons</field>
