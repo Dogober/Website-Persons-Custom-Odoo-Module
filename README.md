@@ -16,6 +16,12 @@ A simple Odoo 16 custom module that allows you to:
 ├── models/
 │ ├── init.py
 │ └── person.py
+├── security/
+│ └── ir.model.access.csv
+├── static/
+│ └── src/
+│   └── css/
+│      └── website_persons.css
 ├── controllers/
 │ ├── init.py
 │ └── website_person.py
