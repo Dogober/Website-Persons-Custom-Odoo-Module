@@ -149,3 +149,11 @@ To add a new person via public form.
 ---
 
 ![Add a person](add_person.png)
+
+---
+
+![Persons ORM](persons_orm.png)
+
+---
+
+![Add a person ORM](add_person_orm.png)
