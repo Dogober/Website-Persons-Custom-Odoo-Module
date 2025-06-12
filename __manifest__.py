@@ -1,7 +1,7 @@
 # noinspection PyStatementEffect
 {
     'name': 'Website Persons',
-    'version': '1.0',
+    'version': '16.0.1.0.0',
     'depends': ['website'],
     'data': [
         'security/ir.model.access.csv',
