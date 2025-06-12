@@ -28,11 +28,9 @@ class Person(models.Model):
 
     @api.depends('birthday')
     def _compute_age(self):
+        today = fields.Date.today()
         for rec in self:
-            if rec.birthday:
-                today = date.today()
-                rec.age = today.year - rec.birthday.year - (
-                    (today.month, today.day) < (rec.birthday.month, rec.birthday.day)
-                )
-            else:
-                rec.age = 0
+            rec.age = (
+                    today.year - rec.birthday.year
+                    - ((today.month, today.day) < (rec.birthday.month, rec.birthday.day))
+            ) if rec.birthday else 0

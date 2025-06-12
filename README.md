@@ -145,4 +145,7 @@ To add a new person via public form.
 ## Demo 🚀
 
 ![Persons](persons.png)
+
+---
+
 ![Add a person](add_person.png)
