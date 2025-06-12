@@ -11,24 +11,24 @@ A simple Odoo 16 custom module that allows you to:
 
 ```custom_addons/
 └── website_persons/
-├── init.py
-├── manifest.py
-├── models/
-│ ├── init.py
-│ └── person.py
-├── security/
-│ └── ir.model.access.csv
-├── static/
-│ └── src/
-│   └── css/
-│      └── website_persons.css
-├── controllers/
-│ ├── init.py
-│ └── website_person.py
-├── templates/
-│ └── website_person_template.xml
-└── views/
-└── person_views.xml
+  ├── init.py
+  ├── manifest.py
+  ├── models/
+  │ ├── init.py
+  │ └── person.py
+  ├── security/
+  │ └── ir.model.access.csv
+  ├── static/
+  │ └── src/
+  │   └── css/
+  │     └── website_persons.css
+  ├── controllers/
+  │ ├── init.py
+  │ └── website_person.py
+  ├── templates/
+  │ └── website_person_template.xml
+  └── views/
+    └── person_views.xml
 ```
 
 ---
@@ -138,12 +138,18 @@ To add a new person via public form.
 ```
 {
     'name': 'Website Persons',
-    'version': '1.0',
+    'version': '16.0.1.0.0',
     'depends': ['website'],
     'data': [
+        'security/ir.model.access.csv',
         'views/person_views.xml',
         'templates/website_person_template.xml',
     ],
+    'assets': {
+        'web.assets_frontend': [
+            'website_persons/static/src/css/website_persons.css',
+        ],
+    },
     'application': True,
 }
 ```
@@ -158,8 +164,8 @@ To add a new person via public form.
 
 ---
 
-![Persons ORM](persons_orm.png)
+![Add a person ORM](add_person_orm.png)
 
 ---
 
-![Add a person ORM](add_person_orm.png)
+![Persons ORM](persons_orm.png)
