@@ -1,0 +1,17 @@
+.person-card {
+  transition: transform 0.2s ease-in-out;
+  border-radius: 12px;
+}
+
+.person-card:hover {
+  transform: scale(1.03);
+}
+
+.card-header {
+  background-color: #35979c;
+  color: white;
+}
+
+.card-text strong {
+  color: #343a40;
+}

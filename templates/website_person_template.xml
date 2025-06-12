@@ -1,0 +1,82 @@
+<odoo>
+  <template id="template_persons_list" name="Persons List Page">
+  <t t-call="website.layout">
+    <div class="container mt-4">
+      <h1 class="mb-4 text-center">Latest Persons</h1>
+      <div class="row">
+        <t t-foreach="persons" t-as="person">
+          <div class="col-md-4 mb-4">
+            <div class="card shadow-sm person-card h-100">
+              <h5 class="card-header text-center" t-esc="person.full_name"/>
+              <div class="card-body">
+                <p class="card-text" t-if="person.sex">
+                  <strong>Sex:</strong> <t t-esc="person.sex"/>
+                </p>
+                <p class="card-text">
+                  <strong>Age:</strong> <t t-esc="person.age"/>
+                </p>
+                <p class="card-text">
+                  <strong>Company:</strong> <t t-esc="person.company_id.name"/>
+                </p>
+              </div>
+            </div>
+          </div>
+        </t>
+      </div>
+    </div>
+  </t>
+</template>
+
+  <template id="template_add_person" name="Add Person Form">
+    <t t-call="website.layout">
+      <div class="container m-3">
+        <h2>Add New Person</h2>
+        <form action="/persons/add" method="POST">
+          <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">First Name</span>
+            <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    name="first_name"
+                    required="true"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Last Name</span>
+            <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    name="last_name"
+                    required="true"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Birthday</span>
+            <input
+                    type="date"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    name="birthday"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Sex</label>
+            <select class="form-select" id="inputGroupSelect01" name="sex">
+              <option value="">-</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="non-binary">Non-binary</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </t>
+  </template>
+</odoo>
