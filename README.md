@@ -142,8 +142,7 @@ To add a new person via public form.
 }
 ```
 
-## 📌 Tips
- - Add custom_addons path to your odoo.conf file under addons_path
- - Use t-esc and t-if in templates to render fields safely
- - Use request.env[...] to query models in controllers
+## Demo 🚀
 
+![Persons](persons.png)
+![Add a person](add_person.png)
